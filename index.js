@@ -1,4 +1,4 @@
-const isLoadMock = false;
+const isLoadMock = true;
 
 const idContent = `contentQuestion`;
 const idViewResult = `viewResult`;
@@ -26,7 +26,7 @@ function setQuestions(questions) {
         answers.forEach(answer => {
             answersHtml += `
             <div class="col">
-                <button onclick="validAnswer('${answer}')">${answer}</button>
+                <button class="btn-primary" onclick="validAnswer('${answer}')">${answer}</button>
             </div>`;
         });
 
@@ -34,22 +34,22 @@ function setQuestions(questions) {
             `
         <div class="row">
             <div class="col">
-                <h1>Pregunta</h1>
-                <h1>${element.question}</h1>
+                <h3 class="title-question">Pregunta</h3>
+                <p class="text-question">${element.question}</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row container-btn">
                 ${answersHtml}
             </div>
         </div>
         <div class="row">
             <div class="col" id="${idViewResult}">
+                <p class="success-answer"></p>
             </div>
         </div>
-        <div class="row">
+        <div class="row container-btn">
             <div class="col">
-                <br><br><br>
-                <button onclick="load()">Nueva pregunta</button>
+                <button class="btn-success" onclick="load()">Nueva pregunta</button>
             </div>
         </div>
         `
